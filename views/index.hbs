@@ -1,0 +1,64 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <h2>Maestría de Software - Universidad Politécnica Salesiana</h2>
+    <hr>
+
+    <h3 class="text-center">Lista de fotos</h3>
+
+    <button type="button" class="btn btn-primary btn-sm" onclick="load()">
+        Recargar
+    </button>
+
+    <div id="tabla" style="max-height: 300px; overflow: auto" class="mt-1"></div>
+
+    <p class="text-end">
+        <small>* Datos obtenidos de: https://jsonplaceholder.typicode.com/photos</small>
+    </p>
+
+    <hr>
+
+    <div>
+        <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <th class="col-sm-2">Fecha</th>
+                <td>{{fecha}}</td>
+            </tr>
+            <tr>
+                <th>Módulo</th>
+                <td>Unidad 1, actividad 1</td>
+            </tr>
+            <tr>
+                <th>Integrantes</th>
+                <td>José Castillo, Manuel Gómez</td>
+            </tr>
+            <tr>
+                <th>Tecnologia</th>
+                <td>Node.js, express</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+<script>
+    function load() {
+        $('#tabla').load('/listaFotos', () => {
+            console.log('cargado');
+        })
+    }
+
+    function cargarFoto(url) {
+        // TODO
+    }
+
+    $(function () {
+        load();
+    });
+</script>
+
+
+
+

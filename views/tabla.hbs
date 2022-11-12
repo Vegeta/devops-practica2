@@ -1,0 +1,15 @@
+<table class="table table-bordered table-condensed table-hover table-striped">
+    {{#each lista}}
+        <tr>
+            <td class="col-sm-10">
+                <a href="javascript:" onclick="cargarFoto('{{url}}')">{{title}}</a>
+            </td>
+            <td class="col-sm-2">
+                <img src="{{thumbnailUrl}}" alt="{{title}}" height="50">
+            </td>
+        </tr>
+    {{/each}}
+</table>
+
+
+
