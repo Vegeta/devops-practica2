@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fotos-app
+  labels:
+    app: fotos
+    env: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fotos
+  template:
+    metadata:
+      labels:
+        app: fotos
+        env: dev
+    spec:
+      containers:
+        - name: fotos
+          image: mvgomezcicd.azurecr.io/devopsfinal
+          ports:
+            - name:  http
+              containerPort: 3000
+              protocol: TCP
