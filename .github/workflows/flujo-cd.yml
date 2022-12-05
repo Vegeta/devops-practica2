@@ -8,14 +8,18 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
+      - 
+        name: Sacar codigo
+        uses: actions/checkout@v2
+
       -
-        name: Login to ACR
+        name: Login en ACR
         uses: docker/login-action@v2
         with:
           registry: mvgomezcicd.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
-          
+            
       - run: |
           docker build . -t mvgomezcicd.azurecr.io/devopsfinal:${{ github.sha }}
           docker push mvgomezcicd.azurecr.io/devopsfinal:${{ github.sha }}
