@@ -8,9 +8,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      - 
-        name: Sacar codigo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       -
         name: Login en ACR
