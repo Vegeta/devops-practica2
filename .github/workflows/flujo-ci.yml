@@ -1,4 +1,4 @@
-name: Preparar software
+name: CI Preparar software
 
 on:
   push:
