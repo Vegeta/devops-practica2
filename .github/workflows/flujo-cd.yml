@@ -15,3 +15,8 @@ jobs:
           registry: mvgomezcicd.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
+          
+      - run: |
+          docker build . -t mvgomezcicd.azurecr.io/devopsfinal:${{ github.sha }}
+          docker push mvgomezcicd.azurecr.io/devopsfinal:${{ github.sha }}
+        
